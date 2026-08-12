@@ -1,0 +1,71 @@
+---
+import { getCollection } from "astro:content";
+import PageLayout from "@/layouts/Base.astro";
+import PostPreview from "@/components/blog/PostPreview.astro";
+
+const meta = {
+	description: "Data-Driven Problem Solver | Analytics & Insights",
+	title: "Home",
+};
+
+const posts = (await getCollection("post"))
+	.filter((post) => !post.data.draft)
+	.sort((a, b) => b.data.publishDate.valueOf() - a.data.publishDate.valueOf())
+	.slice(0, 3);
+---
+
+<PageLayout meta={meta}>
+	<!-- Hero -->
+	<section class="mb-16">
+		<h1 class="title mb-4">Hi, I'm Nimesh Sharma</h1>
+		<p class="text-2xl mb-4 text-accent">Data-Driven Problem Solver | Analytics & Insights</p>
+		<p class="mb-6 max-w-2xl">
+			I transform data into actionable insights. Currently exploring the intersection of data analysis, 
+			financial markets, and emerging technologies. Passionate about building tools that help teams make 
+			better decisions.
+		</p>
+		<div class="flex gap-4">
+			<a href="/posts" class="cactus-link inline-block font-bold">View Projects</a>
+			<a href="/contact" class="cactus-link inline-block font-bold">Get in Touch</a>
+		</div>
+	</section>
+
+	<!-- Experience -->
+	<section class="mb-16">
+		<h2 class="title mb-8">Experience</h2>
+		<div class="border-l-2 border-accent pl-6">
+			<h3 class="text-xl font-bold mb-2">Technical Team Lead</h3>
+			<p class="text-accent mb-1">Computer Engineering Society, Siliguri Institute of Technology</p>
+			<p class="text-sm mb-4 opacity-75">Aug 2025 – Jan 2026</p>
+			<ul class="space-y-2 text-sm">
+				<li>• Organized and ran 45-day DSA challenge with 50+ participants</li>
+				<li>• Handled scoring for Industry Connect event (150+ students)</li>
+				<li>• Hosted hackathons for 40+ teams</li>
+				<li>• Promoted from Junior Associate after 5 months</li>
+			</ul>
+		</div>
+	</section>
+
+	<!-- Socials -->
+	<section class="mb-16">
+		<h2 class="title mb-8">Socials</h2>
+		<div class="space-y-3">
+			<p><a href="mailto:nimeshsharma760@gmail.com" class="cactus-link">Email</a> - nimeshsharma760@gmail.com</p>
+			<p><a href="https://www.linkedin.com/in/nimesh-sharma-5aa961286/" target="_blank" class="cactus-link">LinkedIn</a> - Connect</p>
+			<p><a href="https://github.com/NimeshXTV" target="_blank" class="cactus-link">GitHub</a> - @NimeshXTV</p>
+			<p><a href="https://medium.com/@nimeshsharma760" target="_blank" class="cactus-link">Medium</a> - Read my writing</p>
+		</div>
+	</section>
+
+	<!-- Featured Projects -->
+	<section>
+		<h2 class="title mb-8">Featured Projects</h2>
+		{posts.length > 0 ? (
+			<div class="space-y-4">
+				{posts.map((post) => <PostPreview post={post} />)}
+			</div>
+		) : (
+			<p>No projects found</p>
+		)}
+	</section>
+</PageLayout>
