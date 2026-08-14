@@ -1,12 +1,12 @@
 # Nimesh Sharma
 
-Personal portfolio and blog — writing about data, systems, and learning.
+Personal portfolio — writing about backend engineering, systems design, and learning.
 
 ## What's here
 
 * Home page with what I do
-* Writing about data, systems, and learning
-* Projects and links
+* Writing about systems, architecture, and learning
+* Experience and skills
 * Ways to reach me
 
 ## Tech
