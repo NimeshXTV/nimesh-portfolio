@@ -12,10 +12,19 @@ const meta = {
 	<section class="mb-16">
 		<h1 class="title mb-4">Hi, I'm Nimesh Sharma</h1>
 		<p class="text-accent mb-4 text-2xl">Backend Engineer | Systems & Architecture</p>
-		<p class="mb-6 max-w-2xl">
-			I build scalable backend systems with Java and modern patterns. Focused on multithreading, 
-system design, and high-performance architectures. Clean code, real-world problems.
+		<p class="mb-6 max-w-2xl leading-relaxed">
+			I build scalable backend systems with Java and modern patterns. Focused on multithreading,
+			system design, and high-performance architectures. Clean code, real-world problems.
 		</p>
+		<div class="flex flex-wrap gap-4">
+			<a
+				href="/resume.pdf"
+				download
+				class="border-accent text-accent hover:bg-accent hover:text-global-bg mt-2 inline-block rounded-lg border-2 px-6 py-2.5 font-bold no-underline transition-colors"
+			>
+				My Resume
+			</a>
+		</div>
 	</section>
 
 	<!-- Experience -->
@@ -34,47 +43,49 @@ system design, and high-performance architectures. Clean code, real-world proble
 		</div>
 	</section>
 
-	<!-- Featured Projects -->
+	<!-- Projects -->
 	<section>
-		<h2 class="title mb-8">Featured Projects</h2>
-		<div class="space-y-4">
+		<h2 class="title mb-8">Projects</h2>
+		<div class="space-y-6">
 			<div>
 				<a
-					href="https://github.com/NimeshXTV/multithreaded-web-server"
-					target="_blank"
-					class="cactus-link font-bold">Multithreaded Web Server</a
+					href="/projects/multithreaded-web-server/"
+					class="cactus-link mb-1 block font-bold">Multithreaded Web Server</a
 				>
-				<p class="text-sm opacity-75">
-					Java • High-performance web server with thread pool architecture
+				<p class="text-sm leading-relaxed opacity-75">
+					Java • A TCP echo server benchmarked to 39,000 msg/sec — five threads beat fifty, and
+					thread-per-connection fails under load
 				</p>
 			</div>
 			<div>
 				<a
-					href="https://github.com/NimeshXTV/Banking-Management-System"
-					target="_blank"
-					class="cactus-link font-bold">Banking Management System</a
+					href="/projects/banking-management-system/"
+					class="cactus-link mb-1 block font-bold">Banking Management System</a
 				>
-				<p class="text-sm opacity-75">
-					Java • Full-featured banking system with transaction management
+				<p class="text-sm leading-relaxed opacity-75">
+					Java • 1,000 concurrent transfers, zero money created or destroyed — JDBC transactions
+					proven under fire
 				</p>
 			</div>
 			<div>
 				<a
-					href="https://github.com/NimeshXTV/benford-analysis"
-					target="_blank"
-					class="cactus-link font-bold">Benford's Law Analyzer</a
+					href="/projects/benfords-law-analyzer/"
+					class="cactus-link mb-1 block font-bold">Benford's Law Analyzer</a
 				>
-				<p class="text-sm opacity-75">
-					Python • Anomaly detection in financial data using statistical analysis
+				<p class="text-sm leading-relaxed opacity-75">
+					Python • Extract 652 numbers from a financial PDF and prove statistically whether they're
+					natural or manipulated — in 2.6 seconds
 				</p>
 			</div>
 			<div>
 				<a
-					href="https://github.com/NimeshXTV/ticket-booking-system"
-					target="_blank"
-					class="cactus-link font-bold">Ticket Booking System</a
+					href="/projects/ticket-booking-system/"
+					class="cactus-link mb-1 block font-bold">Ticket Booking System</a
 				>
-				<p class="text-sm opacity-75">Java • CLI ticket booking with login and seat management</p>
+				<p class="text-sm leading-relaxed opacity-75">
+					Java • 100 threads raced for the last seat 1,000 times — the unsynchronized code
+					double-booked in 24 rounds and crashed in 5. One word fixed it
+				</p>
 			</div>
 		</div>
 	</section>
